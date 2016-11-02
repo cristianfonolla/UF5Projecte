@@ -6,11 +6,10 @@
 package zzzprojecte;
 
 import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Scanner;
-import java.util.regex.*;
 
 /**
  *
@@ -267,29 +266,44 @@ public class ZZZProjecte {
 //        Matcher matcher = pattern.matcher(text);
 //
 //        System.out.println(matcher.group(1));
-//Ex 2 de MAPS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        Integer dato = 0;
-        String entrada;
+////Ex 2 de MAPS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//        String entrada = "a";
+//
+//        ArrayList<String> llista = new ArrayList<String>();
+//        
+//        System.out.println("Introdueix les dades (intro finalitzar).");
+//
+//        while (entrada.equals("") == false) {
+//
+//            entrada = ent.nextLine();
+//            if (entrada.equals("") == false) {
+//
+//                llista.add(entrada);
+//            }
+//
+//        }
+//        System.out.println(llista);
+//
+        int[] listaNumeros = {1, 4, 7, 8, 9, 2, 7, 15, 4, 6, 9, 9, 8};
+        HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
 
-        ArrayList<Integer> listaDatos = new ArrayList<Integer>();
-
-        System.out.print("Introduzca los datos y cuando termine pulse enter. Primer dato: ");
-
-        Scanner sc = new Scanner(System.in);
-        entrada = sc.nextLine();
-        dato = dato.valueOf(entrada);
-        listaDatos.add((Integer) dato);
-
-        while (entrada.equals("") == false) {
-            System.out.print("Introduzca dato: ");
-            entrada = sc.nextLine();
-            if (entrada.equals("") == false) {
-                dato = dato.valueOf(entrada);
-                listaDatos.add((Integer) dato);
+        for (int x = 0; x < listaNumeros.length; x++) {
+            int clave = listaNumeros[x];
+            if (hm.containsKey(clave)) {
+                hm.put(clave, hm.get(clave) + 1);
+            } else {
+                hm.put(clave, 1);
             }
-
         }
-        System.out.println("¡TERMINADO! Los datos son:" + listaDatos);
+
+        Iterator< Entry< Integer, Integer>> it = hm.entrySet().iterator();
+        String vez;
+
+        while (it.hasNext()) {
+            Entry<Integer, Integer> e = it.next();
+            vez = (e.getValue() > 1) ? " veces" : " vez";
+            System.out.println("El número " + e.getKey() + " aparece " + e.getValue() + vez);
+        }
 
     }
 
