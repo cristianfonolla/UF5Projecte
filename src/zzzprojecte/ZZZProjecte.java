@@ -136,7 +136,7 @@ public class ZZZProjecte {
 //            System.out.println("No és palindrom");
 //        }
 ////        //Ex 4.
-//        System.out.println("Introdueix dos Strings per comprovar que sòn anagrames·");
+//        System.out.println("Introdueix dos Strings per comprovar iteratorque sòn anagrames·");
 //        String a = ent.nextLine().toLowerCase().trim();
 //        String b = ent.nextLine().toLowerCase().trim();
 //
@@ -266,29 +266,13 @@ public class ZZZProjecte {
 //        Matcher matcher = pattern.matcher(text);
 //
 //        System.out.println(matcher.group(1));
-////Ex 2 de MAPS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        String entrada = "a";
-//
-//        ArrayList<String> llista = new ArrayList<String>();
-//        
-//        System.out.println("Introdueix les dades (intro finalitzar).");
-//
-//        while (entrada.equals("") == false) {
-//
-//            entrada = ent.nextLine();
-//            if (entrada.equals("") == false) {
-//
-//                llista.add(entrada);
-//            }
-//
-//        }
-//        System.out.println(llista);
-//
-        int[] listaNumeros = {1, 4, 7, 8, 9, 2, 7, 15, 4, 6, 9, 9, 8};
-        HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+//Ex 2 de MAPS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        String[] listaNumeros = {"hola", "que", "fas", "que"};
+        
+        HashMap<String, Integer> hm = new HashMap<String, Integer>();
 
         for (int x = 0; x < listaNumeros.length; x++) {
-            int clave = listaNumeros[x];
+            String clave = listaNumeros[x];
             if (hm.containsKey(clave)) {
                 hm.put(clave, hm.get(clave) + 1);
             } else {
@@ -296,15 +280,33 @@ public class ZZZProjecte {
             }
         }
 
-        Iterator< Entry< Integer, Integer>> it = hm.entrySet().iterator();
+        Iterator< Entry< String, Integer>> it = hm.entrySet().iterator();
         String vez;
 
         while (it.hasNext()) {
-            Entry<Integer, Integer> e = it.next();
+            Entry<String, Integer> e = it.next();
             vez = (e.getValue() > 1) ? " veces" : " vez";
-            System.out.println("El número " + e.getKey() + " aparece " + e.getValue() + vez);
+            System.out.println("La paraula: " + e.getKey() + " aparece " + e.getValue() + vez);
         }
 
+        //ex2 meu
+        
+        String text = ent.nextLine().trim();
+        
+        for (int i = 0; i < listaNumeros.length; i++) {
+            String listaNumero = listaNumeros[i];
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     public static String treuA(String strToStrip) {
