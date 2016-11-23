@@ -16,287 +16,288 @@ import java.util.Scanner;
  * @author cristian
  */
 public class ZZZProjecte {
-
-    private static final String PATRO_MAIL = "\\b[\\w]+(\\.[\\w]+)*@" + "[\\w]+(\\.[A-Za-z0-9]+)*?(\\.[A-Za-z]{2,})";
-
-    public static void main(String[] args) {
-        Scanner ent = new Scanner(System.in);
-//        String text = null;
-//        String buscar;
-//        char cBuscar;
-//        String distingir;
-//        char cDistingir;
-//        int EsquerraDreta;
-//        int index;
 //
-//        System.out.println("Introdueix un text acabat en INTRO");
-//        text = ent.nextLine();
-//        do {
-//            System.out.println("Introdueix un caracter a buscar");
-//            buscar = ent.nextLine();
-//        } while (buscar.isEmpty());
-//        cBuscar = buscar.charAt(0);
-//        do {
-//            System.out.println("Vols distingir majuscules/minuscules   S/N");
-//            distingir = ent.nextLine();
-//            if (!distingir.isEmpty()) {
-//                if ("SN".indexOf(distingir.toUpperCase().charAt(0)) != -1) {
-//                    cDistingir = distingir.toUpperCase().charAt(0);
-//                    break;
-//                }
-//            }
-//        } while (true);
+//    private static final String PATRO_MAIL = "\\b[\\w]+(\\.[\\w]+)*@" + "[\\w]+(\\.[A-Za-z0-9]+)*?(\\.[A-Za-z]{2,})";
 //
-//        if (cDistingir == 'N') {
-//            text = text.toLowerCase();
-//            cBuscar = Character.toLowerCase(cBuscar);
-//
-//        }
-//
-//        do {
-//            System.out.println("En quin ordre busco: 1=Esquerra/Dreta    2=Dreta/Esquerra");
-//            EsquerraDreta = ent.nextInt();
-//            if (EsquerraDreta == 1 || EsquerraDreta == 2) {
-//                break;
-//            }
-//        } while (true);
-//
-//        if (EsquerraDreta == 1) {
-//            index = text.indexOf(cBuscar);
-//
-//            while (index != -1) {
-//
-//                System.out.println("El caracter es troba a la posició: " + index);
-//
-//                index = text.indexOf(cBuscar, index + 1);
-//
-//            }
-//        } else {
-//
-//            index = text.lastIndexOf(cBuscar);
-//
-//            while (index != -1) {
-//
-//                System.out.println("El caracter es troba a la posició: " + index);
-//
-//                index = text.lastIndexOf(cBuscar, index - 1);
-//
-//            }
-//        }
-//
-////        //Ex3
-//        System.out.println("Introdueix un text per a comprovar si és palindrom: ");
-//
-//        String pPali = ent.nextLine();
-//        StringBuilder palindrom = new StringBuilder(pPali);
-//
-//        if (pPali.compareTo(palindrom.reverse().toString()) == 0) {
-//            System.out.println("Correcte! És un palindrom");
-//
-//        } else {
-//            System.out.println("No és un palindrom");
-//        }
-
-//        //Ex3.BIS
-//patro ha de reconeixe lo k volem eliminar se li pasa un text i se crida lo metode replace all de la calsse matcher
-//        System.out.println("Introdueix un text per a comprovar si és palindrom: ");
-//
-//        String pPali = ent.nextLine().toLowerCase().trim();
-//        
-//        Pattern pattern = Pattern.compile("[\\p{Punct}\\s]");
-//        Matcher matcher = pattern.matcher(pPali);
-//        
-//        pPali = matcher.replaceAll("");
-//        
-//        StringBuilder palindrom = new StringBuilder(pPali);
-//        
-//        if (pPali.compareTo(palindrom.reverse().toString()) == 0) {
-//            System.out.println("És palindrom");
-//        } else {
-//            System.out.println("No és palindrom");
-//        }
-////      Ex3 bis 2
-//
-//        System.out.println("Introdueix un text per a comprovar si és palindrom: ");
-//
-//        String pPali = ent.nextLine().toLowerCase().trim();
-//        pPali = treuA(pPali);
-//
-//        Pattern pattern = Pattern.compile("[\\p{Punct}\\s]");
-//        Matcher matcher = pattern.matcher(pPali);
-//
-//        pPali = matcher.replaceAll("");
-//        System.out.println(pPali);
-//
-//        StringBuilder palindrom = new StringBuilder(pPali);
-//
-//        if (pPali.compareTo(palindrom.reverse().toString()) == 0) {
-//            System.out.println("És palindrom");
-//        } else {
-//            System.out.println("No és palindrom");
-//        }
-////        //Ex 4.
-//        System.out.println("Introdueix dos Strings per comprovar iteratorque sòn anagrames·");
-//        String a = ent.nextLine().toLowerCase().trim();
-//        String b = ent.nextLine().toLowerCase().trim();
-//
-//        StringBuilder a1 = new StringBuilder();
-//        StringBuilder b1 = new StringBuilder();
-//
-//        foraPunts(a, a1);
-//        foraPunts(b, b1);
-//
-//        char[] aa = a.toCharArray();
-//        char[] ab = b.toCharArray();
-//
-//        Arrays.sort(aa);
-//        Arrays.sort(ab);
-//
-//        if (Arrays.equals(aa, ab) == true) {
-//            System.out.println("És un anagrama!!");
-//        } else {
-//            System.out.println("No és un anagrama");
-//        }
-//
-////          //Ex5.
-//        String text1;
-//
-//        do {
-//
-////            System.out.println("Introdueix un text per a mostrar les primeres lletres de les paraules!");
+//    public static void main(String[] args) {
+//        Scanner ent = new Scanner(System.in);
+////        String text = null;
+////        String buscar;
+////        char cBuscar;
+////        String distingir;
+////        char cDistingir;
+////        int EsquerraDreta;
+////        int index;
 ////
-////            text1 = ent.nextLine();
+////        System.out.println("Introdueix un text acabat en INTRO");
+////        text = ent.nextLine();
+////        do {
+////            System.out.println("Introdueix un caracter a buscar");
+////            buscar = ent.nextLine();
+////        } while (buscar.isEmpty());
+////        cBuscar = buscar.charAt(0);
+////        do {
+////            System.out.println("Vols distingir majuscules/minuscules   S/N");
+////            distingir = ent.nextLine();
+////            if (!distingir.isEmpty()) {
+////                if ("SN".indexOf(distingir.toUpperCase().charAt(0)) != -1) {
+////                    cDistingir = distingir.toUpperCase().charAt(0);
+////                    break;
+////                }
+////            }
+////        } while (true);
+////
+////        if (cDistingir == 'N') {
+////            text = text.toLowerCase();
+////            cBuscar = Character.toLowerCase(cBuscar);
+////
+////        }
+////
+////        do {
+////            System.out.println("En quin ordre busco: 1=Esquerra/Dreta    2=Dreta/Esquerra");
+////            EsquerraDreta = ent.nextInt();
+////            if (EsquerraDreta == 1 || EsquerraDreta == 2) {
+////                break;
+////            }
+////        } while (true);
+////
+////        if (EsquerraDreta == 1) {
+////            index = text.indexOf(cBuscar);
+////
+////            while (index != -1) {
+////
+////                System.out.println("El caracter es troba a la posició: " + index);
+////
+////                index = text.indexOf(cBuscar, index + 1);
+////
+////            }
+////        } else {
+////
+////            index = text.lastIndexOf(cBuscar);
+////
+////            while (index != -1) {
+////
+////                System.out.println("El caracter es troba a la posició: " + index);
+////
+////                index = text.lastIndexOf(cBuscar, index - 1);
+////
+////            }
+////        }
+////
+//////        //Ex3
+////        System.out.println("Introdueix un text per a comprovar si és palindrom: ");
+////
+////        String pPali = ent.nextLine();
+////        StringBuilder palindrom = new StringBuilder(pPali);
+////
+////        if (pPali.compareTo(palindrom.reverse().toString()) == 0) {
+////            System.out.println("Correcte! És un palindrom");
+////
+////        } else {
+////            System.out.println("No és un palindrom");
+////        }
+//
+////        //Ex3.BIS
+////patro ha de reconeixe lo k volem eliminar se li pasa un text i se crida lo metode replace all de la calsse matcher
+////        System.out.println("Introdueix un text per a comprovar si és palindrom: ");
+////
+////        String pPali = ent.nextLine().toLowerCase().trim();
+////        
+////        Pattern pattern = Pattern.compile("[\\p{Punct}\\s]");
+////        Matcher matcher = pattern.matcher(pPali);
+////        
+////        pPali = matcher.replaceAll("");
+////        
+////        StringBuilder palindrom = new StringBuilder(pPali);
+////        
+////        if (pPali.compareTo(palindrom.reverse().toString()) == 0) {
+////            System.out.println("És palindrom");
+////        } else {
+////            System.out.println("No és palindrom");
+////        }
+//////      Ex3 bis 2
+////
+////        System.out.println("Introdueix un text per a comprovar si és palindrom: ");
+////
+////        String pPali = ent.nextLine().toLowerCase().trim();
+////        pPali = treuA(pPali);
+////
+////        Pattern pattern = Pattern.compile("[\\p{Punct}\\s]");
+////        Matcher matcher = pattern.matcher(pPali);
+////
+////        pPali = matcher.replaceAll("");
+////        System.out.println(pPali);
+////
+////        StringBuilder palindrom = new StringBuilder(pPali);
+////
+////        if (pPali.compareTo(palindrom.reverse().toString()) == 0) {
+////            System.out.println("És palindrom");
+////        } else {
+////            System.out.println("No és palindrom");
+////        }
+//////        //Ex 4.
+////        System.out.println("Introdueix dos Strings per comprovar iteratorque sòn anagrames·");
+////        String a = ent.nextLine().toLowerCase().trim();
+////        String b = ent.nextLine().toLowerCase().trim();
+////
+////        StringBuilder a1 = new StringBuilder();
+////        StringBuilder b1 = new StringBuilder();
+////
+////        foraPunts(a, a1);
+////        foraPunts(b, b1);
+////
+////        char[] aa = a.toCharArray();
+////        char[] ab = b.toCharArray();
+////
+////        Arrays.sort(aa);
+////        Arrays.sort(ab);
+////
+////        if (Arrays.equals(aa, ab) == true) {
+////            System.out.println("És un anagrama!!");
+////        } else {
+////            System.out.println("No és un anagrama");
+////        }
+////
+//////          //Ex5.
+////        String text1;
+////
+////        do {
+////
+//////            System.out.println("Introdueix un text per a mostrar les primeres lletres de les paraules!");
+//////
+//////            text1 = ent.nextLine();
+//////
+//////        } while (text1.isEmpty());
+//////
+//////        StringBuilder resultat = new StringBuilder();
+//////
+//////        System.out.println(primeraLletra(text1, resultat));
+////        //Ex5.bis
+////        String text1 = new String();
+////
+////        do {
+////
+////            System.out.println("Digues un text per mostrar les primeres lletres de cada paraula: ");
+////            text1 = ent.nextLine().trim();
 ////
 ////        } while (text1.isEmpty());
 ////
-////        StringBuilder resultat = new StringBuilder();
+////        Pattern pattern = Pattern.compile("\\b[\\p{Alnum}]");
 ////
-////        System.out.println(primeraLletra(text1, resultat));
-//        //Ex5.bis
-//        String text1 = new String();
-//
-//        do {
-//
-//            System.out.println("Digues un text per mostrar les primeres lletres de cada paraula: ");
-//            text1 = ent.nextLine().trim();
-//
-//        } while (text1.isEmpty());
-//
-//        Pattern pattern = Pattern.compile("\\b[\\p{Alnum}]");
-//
-//        Matcher matcher = pattern.matcher(text1);
-//
-//        while (matcher.find()) {
-//
-//            System.out.print(matcher.group());
-//
-//            boolean found = true;
-//        }
-//////Comprovar expresiosn regulars!
-//
-//        while (true) {
-//            System.out.println("Introduix una expressió regular (buida per acabar): ");
-//            String regex = ent.nextLine();
-//            if (regex.isEmpty()) {
-//                break;
-//            }
-//
-//            Pattern pattern = null;
-//            try {
-//                pattern = Pattern.compile(regex);
-//            } catch (PatternSyntaxException e) {
-//                System.out.println("Error a l'expressió regular: " + e.getDescription() + "\nTorna-ho a provar.");
-//
-//                continue;
-//            }
-//
-//            while (true) {
-//                System.out.println("Introduix el text on buscar (buit per canviar d'expressió regular): ");
-//                String text = ent.nextLine();
-//                if (text.isEmpty()) {
-//                    break;
-//                }
-//                Matcher matcher
-//                        = pattern.matcher(text);
-//                boolean found = false;
-//                while (matcher.find()) {
-//                    System.out.format("He trobat el text"
-//                            + " \"%s\" que comença a "
-//                            + "l'índex %d i finalitza a l'índex %d.%n",
-//                            matcher.group(),
-//                            matcher.start(),
-//                            matcher.end());
-//                    found = true;
-//                }
-//                if (!found) {
-//
-//                    System.out.format("No s'han trobat coincidències.%n");
-//                }
-//            }
+////        Matcher matcher = pattern.matcher(text1);
 ////
+////        while (matcher.find()) {
+////
+////            System.out.print(matcher.group());
+////
+////            boolean found = true;
+////        }
+////////Comprovar expresiosn regulars!
+////
+////        while (true) {
+////            System.out.println("Introduix una expressió regular (buida per acabar): ");
+////            String regex = ent.nextLine();
+////            if (regex.isEmpty()) {
+////                break;
+////            }
+////
+////            Pattern pattern = null;
+////            try {
+////                pattern = Pattern.compile(regex);
+////            } catch (PatternSyntaxException e) {
+////                System.out.println("Error a l'expressió regular: " + e.getDescription() + "\nTorna-ho a provar.");
+////
+////                continue;
+////            }
+////
+////            while (true) {
+////                System.out.println("Introduix el text on buscar (buit per canviar d'expressió regular): ");
+////                String text = ent.nextLine();
+////                if (text.isEmpty()) {
+////                    break;
+////                }
+////                Matcher matcher
+////                        = pattern.matcher(text);
+////                boolean found = false;
+////                while (matcher.find()) {
+////                    System.out.format("He trobat el text"
+////                            + " \"%s\" que comença a "
+////                            + "l'índex %d i finalitza a l'índex %d.%n",
+////                            matcher.group(),
+////                            matcher.start(),
+////                            matcher.end());
+////                    found = true;
+////                }
+////                if (!found) {
+////
+////                    System.out.format("No s'han trobat coincidències.%n");
+////                }
+////            }
+//////
+////        }
+//////////Ex7!!!
+////        String email = new String();
+////        do {
+////
+////            System.out.println("Introdueix un text per a comprovar els e-mails!: ");
+////            email = ent.nextLine();
+////
+////        } while (email.isEmpty());
+////
+////        Pattern pattern = Pattern.compile(PATRO_MAIL);
+////
+////        Matcher matcher = pattern.matcher(email);
+////
+////        while (matcher.find()) {
+////
+////            System.out.print(" " + matcher.group());
+////
+////            boolean found = true;
+////        }
+////////EX9!!!
+////        String text;
+////        do {
+////            System.out.println("Introdueix un text que començe amb 3 paraules i acabe amb les mateixes pero al revés!: ");
+////            text = ent.nextLine();
+////
+////        } while (text.isEmpty());
+////
+////        Pattern pattern = Pattern.compile("(\\w)(\\w)(\\w)");
+////        Matcher matcher = pattern.matcher(text);
+////
+////        System.out.println(matcher.group(1));
+////Ex 2 de MAPS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//        String[] listaNumeros = {"hola", "que", "fas", "que"};
+//        
+//        HashMap<String, Integer> hm = new HashMap<String, Integer>();
+//
+//        for (int x = 0; x < listaNumeros.length; x++) {
+//            String clave = listaNumeros[x];
+//            if (hm.containsKey(clave)) {
+//                hm.put(clave, hm.get(clave) + 1);
+//            } else {
+//                hm.put(clave, 1);
+//            }
 //        }
-////////Ex7!!!
-//        String email = new String();
-//        do {
 //
-//            System.out.println("Introdueix un text per a comprovar els e-mails!: ");
-//            email = ent.nextLine();
+//        Iterator< Entry< String, Integer>> it = hm.entrySet().iterator();
+//        String vez;
 //
-//        } while (email.isEmpty());
-//
-//        Pattern pattern = Pattern.compile(PATRO_MAIL);
-//
-//        Matcher matcher = pattern.matcher(email);
-//
-//        while (matcher.find()) {
-//
-//            System.out.print(" " + matcher.group());
-//
-//            boolean found = true;
+//        while (it.hasNext()) {
+//            Entry<String, Integer> e = it.next();
+//            vez = (e.getValue() > 1) ? " veces" : " vez";
+//            System.out.println("La paraula: " + e.getKey() + " aparece " + e.getValue() + vez);
 //        }
-//////EX9!!!
-//        String text;
-//        do {
-//            System.out.println("Introdueix un text que començe amb 3 paraules i acabe amb les mateixes pero al revés!: ");
-//            text = ent.nextLine();
 //
-//        } while (text.isEmpty());
-//
-//        Pattern pattern = Pattern.compile("(\\w)(\\w)(\\w)");
-//        Matcher matcher = pattern.matcher(text);
-//
-//        System.out.println(matcher.group(1));
-//Ex 2 de MAPS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        String[] listaNumeros = {"hola", "que", "fas", "que"};
-        
-        HashMap<String, Integer> hm = new HashMap<String, Integer>();
-
-        for (int x = 0; x < listaNumeros.length; x++) {
-            String clave = listaNumeros[x];
-            if (hm.containsKey(clave)) {
-                hm.put(clave, hm.get(clave) + 1);
-            } else {
-                hm.put(clave, 1);
-            }
-        }
-
-        Iterator< Entry< String, Integer>> it = hm.entrySet().iterator();
-        String vez;
-
-        while (it.hasNext()) {
-            Entry<String, Integer> e = it.next();
-            vez = (e.getValue() > 1) ? " veces" : " vez";
-            System.out.println("La paraula: " + e.getKey() + " aparece " + e.getValue() + vez);
-        }
-
-        //ex2 meu
-        
-        String text = ent.nextLine().trim();
-        
-        for (int i = 0; i < listaNumeros.length; i++) {
-            String listaNumero = listaNumeros[i];
-            
-        }
+//        //ex2 meu
+//        
+//        String text = ent.nextLine().trim();
+//        
+//        for (int i = 0; i < listaNumeros.length; i++) {
+//            String listaNumero = listaNumeros[i];
+//            
+//        }
+//        
         
         
         
@@ -306,8 +307,7 @@ public class ZZZProjecte {
         
         
         
-        
-    }
+//    }
 
     public static String treuA(String strToStrip) {
         String strStripped = null;

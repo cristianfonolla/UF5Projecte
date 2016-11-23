@@ -5,16 +5,25 @@
  */
 package zzzprojecte;
 
+import java.io.Serializable;
+
 /**
  *
  * @author cristian
  */
-public class Jugador {
+public class Jugador implements Serializable {
 
     private int posicio;
     private String equip;
     private String funcio;
     private int numero;
+
+    public Jugador(int posicio, String equip, String funcio, int numero) {
+        this.posicio = posicio;
+        this.equip = equip;
+        this.funcio = funcio;
+        this.numero = numero;
+    }
 
     public int getPosicio() {
         return posicio;
