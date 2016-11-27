@@ -5,21 +5,30 @@
  */
 package zzzprojecte;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.Normalizer;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 /**
  *
  * @author cristian
  */
-public class AA_Strings {
+public class AA_EXERCISIS {
 
     private static final String PATRO_MAIL = "\\b[\\w]+(\\.[\\w]+)*@" + "[\\w]+(\\.[A-Za-z0-9]+)*?(\\.[A-Za-z]{2,})";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String text = null;
         Scanner ent = new Scanner(System.in);
         String buscar;
@@ -250,7 +259,178 @@ public class AA_Strings {
 //        } else {
 //            System.out.println("El text NO complix el patró!");
 //        }
-
+// EXERCISI 2 coleccions1!!!
+//        Scanner entrada = new Scanner(System.in);
+//        text = "";
+//
+//        System.out.println("Introduix un text. Acabat en línia buida");
+//        do {
+//            String linia = entrada.nextLine();
+//            if (linia.isEmpty()) {
+//                break;
+//            }
+//            text += linia + " ";
+//
+//        } while (true);
+////        System.out.println(text);
+//
+//        String[] paraules = text.split("\\s+");
+//
+//        TreeMap tm = new TreeMap();
+//
+//        for (int i = 0; i < paraules.length; i++) {
+//
+//            if (tm.containsKey(paraules[i])) {
+//                int valor = (Integer) tm.get(paraules[i]);
+//                tm.put(paraules[i], ++valor);
+//            } else {
+//                tm.put(paraules[i], 1);
+//            }
+//        }
+// Exercisi Exceptiosn
+////Exercici 1. Excepcions
+//        ProvaEx1 llista = new ProvaEx1();
+//        llista.writeList("1.txt");
+//        llista.readList("2.txt");
+//
+////Exercici 2 Excepcions
+//
+//        ProvaEx2 llista = new ProvaEx2();
+//        llista.readList("fn.txt");
+//        llista.writeList("ff.txt");
+////Fitxers 1
+//        try (
+//                BufferedInputStream in1 = new BufferedInputStream(new FileInputStream("o1.txt"));
+//                BufferedInputStream in2 = new BufferedInputStream(new FileInputStream("o2.txt"));
+//                BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream("fo.txt"));) {
+//
+//            int c, d;
+//            String salt = "\n";
+//
+//            while ((c = in1.read()) != -1) {
+//                out.write(c);
+//
+//                if ('\n' == c) {
+//                    while ((d = in2.read()) != -1) {
+//                        out.write(d);
+//                        if ('\n' == d) {
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//            while ((d = in2.read()) != -1) {
+//                out.write(d);
+//            }
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("No trobat: " + e.getMessage());
+//
+//        }
+//fitxers 2 
+//
+//        try (
+//                BufferedReader in1 = new BufferedReader(new FileReader("o1.txt"));
+//                BufferedReader in2 = new BufferedReader(new FileReader("o2.txt"));
+//                BufferedWriter out = new BufferedWriter(new FileWriter("fc.txt"));) {
+//
+//            int c, d;
+//
+//            while ((c = in1.read()) != -1) {
+//                out.write(c);
+//
+//                if ('\n' == c) {
+//                    while ((d = in2.read()) != -1) {
+//                        out.write(d);
+//                        if ('\n' == d) {
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//            while ((d = in2.read()) != -1) {
+//                out.write(d);
+//            }
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("NO trbat: " + e.getMessage());
+//
+//        }
+//fitxer 3
+//        try (
+//                BufferedReader in1 = new BufferedReader(new FileReader("o1.txt"));
+//                BufferedReader in2 = new BufferedReader(new FileReader("o2.txt"));
+//                PrintWriter out = new PrintWriter(new FileWriter("fl.txt"));) {
+//
+//            String c, d;
+//
+//            while ((c = in1.readLine()) != null && (d = in2.readLine()) != null) {
+//                out.println(c);
+//                out.println(d);
+//                //No va revisar casa!
+//
+//            }
+//            if ((c = in1.readLine()) != null) {
+//                out.println(c);
+//                while ((c = in1.readLine()) != null) {
+//                    out.println(c);
+//                }
+//            }
+//            if ((d = in2.readLine()) != null) {
+//                out.println(d);
+//                while ((d = in2.readLine()) != null) {
+//                    out.println(d);
+//                    //Al debugar peta aqui revisar!
+//                }
+//            }
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("NO triobat: " + e.getMessage());
+//
+//        }
+//        Scanner entrada = new Scanner(new File("n.txt"));
+//
+//        entrada.useDelimiter("\\s\\p{Punct}?\\s");
+//
+//        int total_num = 0;
+//        int total = 0;
+//        String valor;
+//        int valorI;
+//        int aprovats = 0;
+//        int n10 = 0;
+//        int n0 = 0;
+//        int notes_totals = 0;
+//
+//        while (entrada.hasNext()) {
+//            if (!entrada.hasNextInt()) {
+//                valor = entrada.next();
+//                System.out.println("Nota incorrecta : " + valor);
+//            } else {
+//                valor = entrada.next();
+//                valorI = Integer.valueOf(valor);
+//                if (valorI >= 5) {
+//                    aprovats++;
+//                }
+//                if (valorI == 10) {
+//                    n10++;
+//                }
+//                if (valorI == 0) {
+//                    n0++;
+//                }
+//                notes_totals += valorI;
+//                total_num++;
+//            }
+//
+//        }
+//        double perApro = aprovats * 100 / (double) total_num;
+//        double perSusp = (total_num - aprovats) * 100 / (double) total_num;
+//
+//        System.out.println("Total d'alumnes: " + total_num);
+//        System.out.format("Percentatge d'alumnes aprovats: %f\n", perApro);
+//        System.out.format("Percentatge d'alumnes suspesos: %f\n", perSusp);
+//        System.out.println("Total de deus: " + n10);
+//        System.out.println("Total de zeros: " + n0);
+//        System.out.format("Nota mitja: %f\n", (notes_totals / (double) total_num));
     }
 
     public static String treuA(String strToStrip) {

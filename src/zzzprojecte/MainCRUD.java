@@ -6,9 +6,9 @@
 package zzzprojecte;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -445,7 +445,7 @@ public class MainCRUD extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNumeroFocusLost
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        grabarLista(al);
+        guardaFitxer();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void mostrar() {
@@ -462,38 +462,46 @@ public class MainCRUD extends javax.swing.JFrame {
 
     }
 
-    public boolean grabarLista(ArrayList lista) {
-        boolean respuesta = false;
-        String mensaje = "";
-        String archivo = "/home/cristian/NetBeansProjects/fitxerjava.txt";
-        if (!lista.isEmpty()) {
-            try {
-                ObjectOutputStream ficheroSalida = new ObjectOutputStream(new FileOutputStream(new File(archivo)));
+    public static File f = new File("cruduf5.dat");
 
-                for (int i = 0; i < al.size(); i++) {
-                    ficheroSalida.writeObject(lista);
-                    ficheroSalida.flush();
+    private void guardaFitxer() {
+        try (
+                ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(f)));) {
+
+            for (int i = 0; i < al.size(); i++) {
+                try {
+                    Jugador a = (Jugador) al.get(i);
+                    out.writeObject(a);
+                } catch (Exception ex) {
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Error en la escriptura", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void carregaFitxer() throws IOException {
+        al = new ArrayList<>();
+
+        if (f.exists()) {
+            try (
+                    ObjectInputStream entrada = new ObjectInputStream(new BufferedInputStream(new FileInputStream(f)));) {
+                while (true) {
+                    try {
+                        Jugador a = (Jugador) entrada.readObject();
+                        al.add(a);
+                    } catch (Exception ex) {
+                        break;
+                    }
                 }
 
-                ficheroSalida.close();
-                mensaje = "tDatos de personas guardados correctamente en " + archivo + ".";
-                System.out.println("tDatos de personas guardados correctamente en " + archivo + ".");
-                respuesta = true;
-            } catch (FileNotFoundException fnfe) {
-                mensaje = "tError al grabar personas: El fichero " + archivo + " no existe. ";
-                System.out.println("tError: El fichero " + archivo + " no existe. ");
-                respuesta = false;
-            } catch (IOException ioe) {
-                mensaje = "tError: Falló la escritura de las personas en el fichero" + archivo + ". ";
-                System.out.println("tError: Falló la escritura en el fichero" + archivo + ". ");
-                respuesta = false;
             }
+
         } else {
-            mensaje = "tNo hay datos de personas que guardar. La lista está vacía.";
-            System.out.println("tNo hay datos que guardar. La lista está vacía. ");
-            respuesta = false;
+            JOptionPane.showMessageDialog(rootPane, "No s'ha carregat correctament. El fitxer no existeix.", "Error en la càrrega", JOptionPane.ERROR_MESSAGE);
         }
-        return respuesta;
+
     }
 
     /**
